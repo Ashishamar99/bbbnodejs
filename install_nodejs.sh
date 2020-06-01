@@ -1,3 +1,6 @@
+: '
+
+
 #!/bin/bash
 
 # Discussion, issues and change requests at:
@@ -330,3 +333,11 @@ print_status """Run \`${bold}sudo apt-get install -y ${NODEPKG}${normal}\` to in
 
 ## Defer setup until we have the complete script
 setup
+
+'
+
+# contains commands to install bigbluebutton
+
+wget https://ubuntu.bigbluebutton.org/repo/bigbluebutton.asc -O- | sudo apt-key add -
+echo "deb https://ubuntu.bigbluebutton.org/xenial-22/ bigbluebutton-xenial main" | sudo tee /etc/apt/sources.list.d/bigbluebutton.list
+sudo apt-get update
